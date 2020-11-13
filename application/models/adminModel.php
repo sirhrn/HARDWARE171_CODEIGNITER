@@ -22,6 +22,12 @@
 		     return $query->result_array();
 		 	}
 
+			public function getLoggedAdmin($id)
+			 	{
+					$query = $this->db->get_where('admin', array('id' => $id));
+			    return $query->result_array();
+			 	}
+
 		public function deleteAdmin($id)
 			{
 				$this->db->delete('admin', array('id' => $id));
@@ -51,8 +57,6 @@
 							return FALSE;
 						}
 					}
-
-
 				 }
 	}
 ?>

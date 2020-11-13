@@ -59,6 +59,7 @@ p {
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
+		<a href="/HARDWARE171_CODEIGNITER/"><button>Voltar a página Inicial</button></a>
 	</div>
 </body>
 </html>

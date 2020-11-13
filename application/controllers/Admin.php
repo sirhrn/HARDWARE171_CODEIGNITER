@@ -11,17 +11,33 @@ class Admin extends CI_Controller {
     $this->load->library('form_validation');
 		$this->load->helper('form');
     $this->load->model('adminModel');
+		$this->load->library("session");
 	}
 
 	public function list()
 	{
-		$data['admin'] = $this->adminModel->getAdmin();
-		$this->load->view('admin/adminList', $data);
+		if(!$this->session->userdata('adminLogged'))
+		{
+			echo "<script>alert('Faça login para acessar essa página!!')</script>";
+			$this->load->view('admin/adminLogin');
+		}
+		else {
+			$data['admin'] = $this->adminModel->getAdmin();
+			$this->load->view('admin/adminList', $data);
+		}
+
 	}
 
 	public function createForm()
 	{
-		$this->load->view('admin/adminCreate');
+		if(!$this->session->userdata('adminLogged'))
+		{
+			echo "<script>alert('Faça login para acessar essa página!!')</script>";
+			$this->load->view('admin/adminLogin');
+		}
+		else {
+			$this->load->view('admin/adminCreate');
+		}
 	}
 
 	public function insert()
@@ -68,12 +84,20 @@ class Admin extends CI_Controller {
 		{
 			if ($this->adminModel->verifyLogin())
 			{
+				$data['login'] = 'TRUE';
 				$data['admin'] = $this->adminModel->getAdmin();
+				$this->session->set_userdata('adminLogged', $data['admin'][0]['email']);
 				$this->load->view('admin/adminList', $data);
 			}
 			else {
 				$this->load->view('admin/adminLogin');
 			}
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('adminLogged');
+		$this->load->view('home');
 	}
 }

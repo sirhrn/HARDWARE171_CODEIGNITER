@@ -53,4 +53,4 @@ $route['admin/list'] = 'admin/list';
 $route['admin/delete/:num'] = 'admin/delete';
 $route['admin/createForm'] = 'admin/createForm';
 $route['admin/loginForm'] = 'admin/loginForm';
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'Home';
