@@ -41,4 +41,14 @@
 					<a class="dropdown-item" href="/HARDWARE171_CODEIGNITER/produto/createForm">Cadastrar</a>
 				</div>
 			</div>
+			]<div class="btn-group">
+				<button type="button" class="btn btn-info">Compra</button>
+				<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="/HARDWARE171_CODEIGNITER/compra/list">Ver</a>
+					<a class="dropdown-item" href="/HARDWARE171_CODEIGNITER/compra/createForm">Cadastrar</a>
+				</div>
+			</div>
 </nav>
