@@ -11,7 +11,13 @@ class Cliente extends CI_Controller {
     $this->load->library('form_validation');
 		$this->load->helper('form');
     $this->load->model('clienteModel');
-		$this->load->library("session");
+	}
+
+	public function confirmDelete()
+	{
+		$data['id'] = $this->uri->segment(3);
+		$data['modulo'] = $this->uri->segment(1);
+		$this->load->view('components/confirmDelete', $data);
 	}
 
 	public function list()
@@ -62,13 +68,13 @@ class Cliente extends CI_Controller {
 
 		if($this->form_validation->run() == FALSE)
 		{
-			echo "Erro no cadastro do Cliente, Verifique os campos e tente Novamente!!";
+			echo "<script>alert('Erro no cadastro do Cliente, Verifique os campos e tente Novamente!!')</script>";
 			$this->load->view('cliente/clienteCreate');
 		}
 		else
 		{
 			$this->clienteModel->setCliente();
-			echo "Cliente Cadastrado com Sucesso!!";
+			echo "<script>alert('Cliente Cadastrado com Sucesso!!')</script>";
 			$this->load->view('cliente/clienteCreate');
 		}
 	}
@@ -82,13 +88,13 @@ class Cliente extends CI_Controller {
 
 		if($this->form_validation->run() == FALSE)
 		{
-			echo "Erro na edição do Cliente, Verifique os campos e tente Novamente!!";
+			echo "<script>alert('Erro na edição do Cliente, Verifique os campos e tente Novamente!!')</script>";
 			$this->load->view('cliente/clienteEdit');
 		}
 		else
 		{
 			$this->clienteModel->updateCliente();
-			echo "Cliente Cadastrado com Sucesso!!";
+			echo "<script>alert('Cliente Editado com Sucesso!!')</script>";
 			$data['cliente'] = $this->clienteModel->getCliente();
 			$this->load->view('cliente/clienteList', $data);
 		}

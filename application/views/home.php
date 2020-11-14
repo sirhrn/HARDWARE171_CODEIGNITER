@@ -90,6 +90,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a class='dropdown-item' href='/HARDWARE171_CODEIGNITER/cliente/createForm'>Cadastrar</a>
 					</div>
 				</div>
+				]<div class='btn-group'>
+					<button type='button' class='btn btn-info'>Fornecedor</button>
+					<button type='button' class='btn btn-info dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+						<span class='sr-only'>Toggle Dropdown</span>
+					</button>
+					<div class='dropdown-menu'>
+						<a class='dropdown-item' href='/HARDWARE171_CODEIGNITER/fornecedor/list'>Ver</a>
+						<a class='dropdown-item' href='/HARDWARE171_CODEIGNITER/fornecedor/createForm'>Cadastrar</a>
+					</div>
+				</div>
+				]<div class='btn-group'>
+					<button type='button' class='btn btn-info'>Produto</button>
+					<button type='button' class='btn btn-info dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+						<span class='sr-only'>Toggle Dropdown</span>
+					</button>
+					<div class='dropdown-menu'>
+						<a class='dropdown-item' href='/HARDWARE171_CODEIGNITER/produto/list'>Ver</a>
+						<a class='dropdown-item' href='/HARDWARE171_CODEIGNITER/produto/createForm'>Cadastrar</a>
+					</div>
+				</div>
 			";
 		}
 	 ?>

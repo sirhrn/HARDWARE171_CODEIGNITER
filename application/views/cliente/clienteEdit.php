@@ -11,8 +11,7 @@
 		<h1 class="text-center">Edição de Cliente</h1><br><br>
 		<div div class="container center_div">
 			<form action="/HARDWARE171_CODEIGNITER/cliente/update" method="post" accept-charset="utf-8">
-				<label for="id">ID do cliente</label>
-				<input type="id" name="id" value="<?php echo ($cliente[0]['id']); ?>"><br>
+				<input type="id" name="id" value="<?php echo ($cliente[0]['id']); ?>" hidden><br>
 				<label for="nome">Digite o nome</label>
 				<input type="nome" name="nome" value="<?php echo ($cliente[0]['nome']); ?>"><br>
 				<label for="email">Digite o Email</label>

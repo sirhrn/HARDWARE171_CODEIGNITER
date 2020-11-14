@@ -44,17 +44,17 @@
 
 					if (!isset($databd[0]['email']))
 					{
-						echo "Email não exite na base de dados!!";
+						echo "<script>alert('Email não exite na base de dados!!')</script>";
 						return FALSE;
 					}
 					else {
 						if ($databd[0]['senha'] == $data['senha'])
 						{
-							return TRUE;
+							return $databd;
 						}
 						else {
-							echo "Senha incorreta!! Tente Novamente!!";
-							return FALSE;
+							echo "<script>alert('Senha incorreta!! Tente Novamente!!')</script>";
+							return $databd;
 						}
 					}
 				 }

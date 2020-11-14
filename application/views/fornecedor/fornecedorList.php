@@ -2,11 +2,11 @@
 <html lang="pt-br" dir="ltr">
 	<head>
 	<?php $this->load->view('components/bootstrap'); ?>
-	<title>Listagem de Clientes</title>
+	<title>Listagem de Fornecedores</title>
 	</head>
 	<?php $this->load->view('components/nav'); ?><br><br>
 	<body>
-		<h1 class="text-center">Listagem de Clientes</h1>
+		<h1 class="text-center">Listagem de Fornecedores</h1>
 		<div class="row justify-content-center">
 	    <div class="col-auto">
 	      <table class="table table-responsive">
@@ -15,20 +15,19 @@
 							<tr>
 								<th scope="col">ID</th>
 								<th scope="col">Nome</th>
-								<th scope="col">Email</th>
-								<th scope="col">Cidade</th>
+								<th scope="col">Logo</th>
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach ($cliente as $clientedata): ?>
+							<?php foreach ($fornecedor as $fornecedordata): ?>
 								<tr>
-									<td><?php echo ($clientedata['id']); ?></td>
-									<td><?php echo ($clientedata['nome']); ?></td>
-									<td><?php echo ($clientedata['email']); ?></td>
-									<td><?php echo ($clientedata['cidade']); ?></td>
-									<td><a href="/HARDWARE171_CODEIGNITER/cliente/confirmDelete/<?php echo ($clientedata['id']); ?>">
+									<td><?php echo ($fornecedordata['id']); ?></td>
+									<td><?php echo ($fornecedordata['nome']); ?></td>
+									<td><img src="../assets/fornecedor/<?php echo ($fornecedordata['logo']); ?>"
+										 alt="<?php echo ($fornecedordata['nome']);?>" width="400px" height="100px"></td>
+									<td><a href="/HARDWARE171_CODEIGNITER/fornecedor/confirmDelete/<?php echo ($fornecedordata['id']); ?>">
 									<button class="btn btn-danger">Excluir</button></a></td>
-									<td><a href="/HARDWARE171_CODEIGNITER/cliente/edit/<?php echo ($clientedata['id']); ?>">
+									<td><a href="/HARDWARE171_CODEIGNITER/fornecedor/edit/<?php echo ($fornecedordata['id']); ?>">
 									<button class="btn btn-warning">Editar</button></a></td>
 								</tr>
 							<?php endforeach; ?>;

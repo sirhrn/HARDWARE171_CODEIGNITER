@@ -23,7 +23,7 @@
 								<tr>
 									<td><?php echo ($admindata['id']); ?></td>
 									<td><?php echo ($admindata['email']); ?></td>
-									<td><a href="/HARDWARE171_CODEIGNITER/admin/delete/<?php echo ($admindata['id']); ?>">
+									<td><a href="/HARDWARE171_CODEIGNITER/admin/confirmDelete/<?php echo ($admindata['id']); ?>">
 									<button class="btn btn-danger">Excluir</button></a></td>
 								</tr>
 							<?php endforeach; ?>;

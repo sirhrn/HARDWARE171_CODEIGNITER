@@ -9,7 +9,7 @@
 		public function setCliente()
 			 {
 		    $data = array(
-						'nome' => $this->input->post('nome'),
+						'nome' => ucwords($this->input->post('nome')),
 		        'email' => $this->input->post('email'),
 		        'cidade' => $this->input->post('cidade')
 		    );
@@ -21,7 +21,7 @@
 	 			 {
 					 $data = array(
 						 'id' => $this->input->post('id'),
- 							'nome' => $this->input->post('nome'),
+ 							'nome' => ucwords($this->input->post('nome')),
  			        'email' => $this->input->post('email'),
  			        'cidade' => $this->input->post('cidade')
  			    );
